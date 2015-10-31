@@ -24,27 +24,27 @@ public class Default implements Language {
 
 	@Override
 	public String unknownBeatmap() {
-		return "I'm sorry, I don't know that map. It might be very new, very hard, unranked or not standard osu mode.";
+		return "Olen pahoillani, Minä en tiedä tuota mappia. Se saattaa olla erittäin uusi, erittäin vaikea, rankkaamaton tai se ei ole standardissa Osu! pelimuodossa.";
 	}
 
 	@Override
 	public String internalException(String marker) {
-		return "Ugh... Looks like human Tillerino screwed up my wiring."
-				+ " If he doesn't notice soon, could you [https://github.com/Tillerino/Tillerinobot/wiki/Contact inform him]? (reference "
+		return "Ugh... Näyttäisi siltää että ihmis Tillerinolla tuli ongelma minun koodauksessani."
+				+ " Jos hän ei huomaa pian, voisitko sinä [https://github.com/Tillerino/Tillerinobot/wiki/Contact ilmoittaa hänelle]? (reference "
 				+ marker + ")";
 	}
 
 	@Override
 	public String externalException(String marker) {
-		return "What's going on? I'm only getting nonsense from the osu server. Can you tell me what this is supposed to mean? 0011101001010000"
-				+ " Human Tillerino says that this is nothing to worry about, and that we should try again."
-				+ " If you're super worried for some reason, you can [https://github.com/Tillerino/Tillerinobot/wiki/Contact tell him] about it. (reference "
+		return "Mitä tapahtuu? Minä saan vain sekasortoa Osu! serververiltä. Voitko sinä kertoa minulle mitä tämän pitäisi tarkoittaa? 0011101001010000"
+				+ " Ihminen Tillerino sanoi että tämä ei ole mitään mistä huolehtia, ja että meidän pitäisi yrittää uudestaan."
+				+ " Jos olet erittäin huolestunut jostain syystä, sinä voit [https://github.com/Tillerino/Tillerinobot/wiki/Contact kertoa hänelle] siitä. (reference "
 				+ marker + ")";
 	}
 
 	@Override
 	public String noInformationForModsShort() {
-		return "no data for requested mods";
+		return "Ei dataa pyydetyistä modeista";
 	}
 
 	@Override
@@ -52,19 +52,19 @@ public class Default implements Language {
 		if (inactiveTime < 60 * 1000) {
 			user.message("beep boop");
 		} else if (inactiveTime < 24 * 60 * 60 * 1000) {
-			user.message("Welcome back, " + apiUser.getUserName() + ".");
+			user.message("Tervetuloa takaisin, " + apiUser.getUserName() + ".");
 		} else if (inactiveTime > 7l * 24 * 60 * 60 * 1000) {
 			user.message(apiUser.getUserName() + "...");
-			user.message("...is that you? It's been so long!");
-			user.message("It's good to have you back. Can I interest you in a recommendation?");
+			user.message("...Oletko se sinä? On kulunut niin pitkä aika");
+			user.message("On kiva tavata taas. Olisitko kiinostunut suositkseen?");
 		} else {
 			String[] messages = {
-					"you look like you want a recommendation.",
-					"how nice to see you! :)",
-					"my favourite human. (Don't tell the other humans!)",
-					"what a pleasant surprise! ^.^",
-					"I was hoping you'd show up. All the other humans are lame, but don't tell them I said that! :3",
-					"what do you feel like doing today?",
+					"Näytät siltä että tahtoisit suosituksen.",
+					"Hei kiva nähdä taas! :)",
+					"Minun lempi-ihmiseni. (Älä kerro toislle ihmisille!)",
+					"Kuinka mukava yllätys! ^.^",
+					"Toivoinkin että saapuisit. Kaikki muut ihmiset ovat tylsiä, mutta älä kerro heille että sanoin tuon! :3",
+					"Mitä tahtoisit tehdä tänään?",
 			};
 
 			Random random = new Random();
@@ -77,33 +77,33 @@ public class Default implements Language {
 
 	@Override
 	public String unknownCommand(String command) {
-		return "Unknown command \"" + command
-				+ "\". Type !help if you need help!";
+		return "Tuntematon komento \"" + command
+				+ "\". Kirjoita !help jos tarvit apua jossain!";
 	}
 
 	@Override
 	public String noInformationForMods() {
-		return "Sorry, I can't provide information for those mods at this time.";
+		return "Olen pahoillani, En voi antaa tietoa noista modeista tällä hetkellä.";
 	}
 
 	@Override
 	public String malformattedMods(String mods) {
-		return "Those mods don't look right. Mods can be any combination of DT HR HD HT EZ NC FL SO NF. Combine them without any spaces or special chars. Example: !with HDHR, !with DTEZ";
+		return "Nuo modit eivät näytä oikealta. Modit voivat olla mikä tahansa combo näitä: DT HR HD HT EZ NC FL SO NF. Yhdistä ne ilman mitään välejä tai erikoisa merkintöjä. Esimerkki: !with HDHR, !with DTEZ";
 	}
 
 	@Override
 	public String noLastSongInfo() {
-		return "I don't remember giving you any song info...";
+		return "En muista antaneeni sinulle viimeisen mapin infoa...";
 	}
 
 	@Override
 	public String tryWithMods() {
-		return "Try this map with some mods!";
+		return "Kokeile tätä mappia muutamalla modilla!";
 	}
 
 	@Override
 	public String tryWithMods(List<Mods> mods) {
-		return "Try this map with " + Mods.toShortNamesContinuous(mods) + "!";
+		return "Kokeile tätä mappia näillä " + Mods.toShortNamesContinuous(mods) + "!";
 	}
 
 	/**
@@ -118,29 +118,29 @@ public class Default implements Language {
 	 * @return
 	 */
 	public String unresolvableName(String exceptionMarker, String name) {
-		return "Your name is confusing me. Are you banned? If not, pls [https://github.com/Tillerino/Tillerinobot/wiki/Contact contact Tillerino]. (reference "
+		return "Sinun nimesi häiritsee minua. Onko sinut bannatty? Jos ei, pls [https://github.com/Tillerino/Tillerinobot/wiki/Contact ilmoita Tillerinolle]. (reference "
 				+ exceptionMarker + ")";
 	}
 
 	@Override
 	public String excuseForError() {
-		return "I'm sorry, there was this beautiful sequence of ones and zeros and I got distracted. What did you want again?";
+		return "Olen pahoillani, äsken juuri oli erittäin kaunis combo numerioita yksi ja nolla ja harhaannuin. Mitä taas tahdoitkaan?";
 	}
 
 	@Override
 	public String complaint() {
-		return "Your complaint has been filed. Tillerino will look into it when he can.";
+		return "Valituksesi on lähetetty. Tillerino katsoo asiaan heti kun hän voi.";
 	}
 
 	@Override
 	public void hug(final IRCBotUser user, OsuApiUser apiUser) {
-		user.message("Come here, you!");
-		user.action("hugs " + apiUser.getUserName());
+		user.message("Tules tännä sinä");
+		user.action("halaa " + apiUser.getUserName());
 	}
 
 	@Override
 	public String help() {
-		return "Hi! I'm the robot who killed Tillerino and took over his account. Just kidding, but I do use the account a lot."
+		return "Moi! Olen se robotti joka tappoi Tillerinon ja varastin hänen tilinsä. Vitsi vitsi, mutta käytän tätä tiliä aika paljon."
 				+ " [https://twitter.com/Tillerinobot status and updates]"
 				+ " - [https://github.com/Tillerino/Tillerinobot/wiki commands]"
 				+ " - [http://ppaddict.tillerino.org/ ppaddict]"
@@ -154,23 +154,23 @@ public class Default implements Language {
 
 	@Override
 	public String featureRankRestricted(String feature, int minRank, OsuApiUser user) {
-		return "Sorry, at this point " + feature + " is only available for players who have surpassed rank " + minRank + ".";
+		return "Olen pahoillani tuo komento; " + feature + " On vain niille pelaajille jotka ovat ylittäneet rankin " + minRank + ".";
 	}
 
 	@Override
 	public String mixedNomodAndMods() {
-		return "What do you mean nomod with mods?";
+		return "Mitä sinä tarkoitat nomodilla modien kanssa?";
 	}
 
 	@Override
 	public String outOfRecommendations() {
-		return "I've recommended everything that I can think of."
-				+ " Try other recommendation options or use !reset. If you're not sure, check !help.";
+		return "Olen suositellut kaikkea mitkä sopisi sinulle."
+				+ " Kokeile muita asetuksia tai käytä komentoa: !reset. Jos olet varma, tarkista !help.";
 	}
 
 	@Override
 	public String notRanked() {
-		return "Looks like that beatmap is not ranked.";
+		return "Näyttäisi siltä että tämä beatmap ei ole rankattu.";
 	}
 
 	@Override
@@ -203,7 +203,7 @@ public class Default implements Language {
 
 	@Override
 	public String invalidAccuracy(String acc) {
-		return "Invalid accuracy: \"" + acc + "\"";
+		return "Mahdoton tarkkuus: \"" + acc + "\"";
 	}
 
 	@Override
@@ -233,55 +233,55 @@ public class Default implements Language {
 		 * P.S. you can put a link to your profile into the line like this:
 		 * [https://osu.ppy.sh/u/2070907 Tillerino]
 		 */
-		user.message("So you like me just the way I am :)");
+		user.message("[https://osu.ppy.sh/u/6295075 Tumesuo] auttoi minua oppimaan Suomea ");
 	}
 
 	@Override
 	public String invalidChoice(String invalid, String choices) {
-		return "I'm sorry, but \"" + invalid
-				+ "\" does not compute. Try these: " + choices + "!";
+		return "Olen pahoillani, mutta \"" + invalid
+				+ "\" ei vastaa. kokeile näitä: " + choices + "!";
 	}
 
 	@Override
 	public String setFormat() {
-		return "The syntax to set a parameter is !set option value. Try !help if you need more pointers.";
+		return "Syntaxin käyttämin asettamaan parametri on !set komentoarvo. Kokeile !help jos tarvitset lisää osittajia.";
 	}
 	
 	StringShuffler doSomething = new StringShuffler(rnd);
 	
 	@Override
 	public String apiTimeoutException() {
-		final String message = "The osu! servers are super slow right now, so there's nothing I can do for you at this moment. ";
+		final String message = "osu! servererit ovat erittäin hitaita tällä hetkellä, joten ei ole mitään mitä voin tehdä mitään tällä hetkellä. ";
 		return message + doSomething.get(
-				"Say... When was the last time you talked to your grandmother?",
-				"How about you clean your room and then ask again?",
-				"I bet you'd love to take a walk right now. You know... outside?",
-				"I just know that you have a bunch of other things to do. How about just doing them now?",
-				"You look like you need a nap anyway.",
-				"But check out this super interesting page on [https://en.wikipedia.org/wiki/Special:Random wikipedia]!",
-				"Let's check if anybody good is [http://www.twitch.tv/directory/game/Osu! streaming] right now!",
-				"Look, here is another [http://dagobah.net/flash/Cursor_Invisible.swf game] that you probably suck at!",
+				"Kerroppas... Milloin oli viimeksi kun puhuit isoäidillesi?",
+				"Mitäpäs jos you siivoisit huoneesi ja sitten kysyt uudelleen?",
+				"Lyön vaikka vetoa että pitäisit kävelystä ulkona tällä hetkellä. Tiedäthän... ulkona?",
+				"Tiedän että sinulla on paljon tärkeämpiä asiat. Miksi et tekisi niitä?",
+				"Näytät siltä että voisit tarvita päiväunet.",
+				"Mutta katsoppa tätä super kiinostavaa sivua [https://fi.wikipedia.org/wiki/Special:Random wikipediassa]!",
+				"Katsotaanpas onko kukaan hyvä [http://www.twitch.tv/directory/game/Osu! streaming] right now!",
+				"Katsoppas, tässä on toinen [http://dagobah.net/flash/Cursor_Invisible.swf peli] jossa luultavasti olet surkea!",
 				"This should give you plenty of time to study [https://github.com/Tillerino/Tillerinobot/wiki my manual].",
-				"Don't worry, these [https://www.reddit.com/r/osugame dank memes] should pass the time.",
-				"While you're bored, give [http://gabrielecirulli.github.io/2048/ 2048] a try!",
-				"Fun question: If your harddrive crashed right now, how much of your personal data would be lost forever?",
-				"So... Have you ever tried the [https://www.google.de/search?q=bring%20sally%20up%20push%20up%20challenge sally up push up challenge]?",
-				"You can go do something else or we can just stare into each others eyes. Silently."
+				"Älä huoli, nämä [https://www.reddit.com/r/osugame dankit memet] auttaa sinua polttamaan aikaa.",
+				"Nyt kun sinulla on tulsää, anna pelille [http://gabrielecirulli.github.io/2048/ 2048] yritys!",
+				"Tässä nyt hassu kysymys: Jos sinun kovalevysi hajoaisi juuri nyt, kuinka plajon sinin yksityistä dataa katoaisi ikiajoiksi?",
+				"Eli... Oletko kokeillut [https://www.google.de/search?q=bring%20sally%20up%20push%20up%20challenge punnerushaastetta]?",
+				"Voit tehdä jotain muuta tai me voimme vain tuijottaa toisiamme silmiin. Hiljaa."
 				);
 	}
 
 	@Override
 	public String noRecentPlays() {
-		return "I haven't seen you play lately.";
+		return "En ole nähnyt sinun pelaavan vähään aikaan.";
 	}
 	
 	@Override
 	public String isSetId() {
-		return "This references a set of beatmaps, not a single beatmap.";
+		return "Tämä viittaa settiin beatmappeja, ei yhteen beatmappiin.";
 	}
 	
 	@Override
 	public String getPatience() {
-		return "Just a second...";
+		return "Odotas 1 sekuntti...";
 	}
 }
